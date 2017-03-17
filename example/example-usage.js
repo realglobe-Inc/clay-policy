@@ -1,13 +1,9 @@
 'use strict'
 
-const clayLump = require('clay-lump')
 const clayPolicy = require('clay-policy')
 const { STRING, DATE } = clayPolicy.Types
 
 async function tryPolicy () {
-  const lump = clayLump('testing-wrapn')
-  const User = lump.reource('User')
-
   const policy = clayPolicy({
     username: {
       type: STRING,

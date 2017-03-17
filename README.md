@@ -74,14 +74,10 @@ Usage
 ```javascript
 'use strict'
 
-const clayLump = require('clay-lump')
 const clayPolicy = require('clay-policy')
 const { STRING, DATE } = clayPolicy.Types
 
 async function tryPolicy () {
-  const lump = clayLump('testing-wrapn')
-  const User = lump.reource('User')
-
   const policy = clayPolicy({
     username: {
       type: STRING,
@@ -96,11 +92,11 @@ async function tryPolicy () {
     }
   })
 
-  let errors = policy.validate({
+  let error = policy.validate({
     username: 'hoge',
     rank: [ 'SUPER' ]
   })
-  console.errors(errors)
+  console.errors(error.detail.failures) // -> { rank: { reason: 'enums', expects: [ /* ... */ ], actual: 'ULTRA' } }
 }
 
 tryPolicy().catch((err) => console.error(err))
