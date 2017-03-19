@@ -6,7 +6,7 @@
 
 const ClayPolicy = require('../lib/clay_policy.js')
 const Types = require('../lib/types')
-const { deepEqual } = require('assert')
+const { deepEqual, ok } = require('assert')
 const co = require('co')
 
 describe('clay-policy', function () {
@@ -60,6 +60,7 @@ describe('clay-policy', function () {
         }
       })
     }
+    ok(policy.clone())
   }))
 })
 

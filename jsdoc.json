@@ -1,0 +1,131 @@
+{
+  "classes": [
+    {
+      "name": "ClayPolicy",
+      "description": "",
+      "extends": [],
+      "access": "",
+      "virtual": false,
+      "fires": "",
+      "constructor": {
+        "name": "ClayPolicy",
+        "description": "Type restrictions for clay entity",
+        "parameters": [
+          {
+            "name": "properties",
+            "type": "Object",
+            "description": "Property config",
+            "default": "",
+            "optional": "",
+            "nullable": ""
+          },
+          {
+            "name": "options",
+            "type": "Object",
+            "description": "Optional settings",
+            "default": "{}",
+            "optional": true,
+            "nullable": ""
+          }
+        ],
+        "examples": []
+      },
+      "functions": [
+        {
+          "name": "validate",
+          "access": "",
+          "virtual": false,
+          "description": "Validate an entity",
+          "parameters": [
+            {
+              "name": "entity",
+              "type": "ClayEntity",
+              "description": "Entity to validate",
+              "default": "",
+              "optional": "",
+              "nullable": ""
+            }
+          ],
+          "examples": [],
+          "returns": {
+            "type": "PolicyError",
+            "description": "Returns a PolicyError if something is wrong"
+          }
+        },
+        {
+          "name": "validateToThrow",
+          "access": "",
+          "virtual": false,
+          "description": "Validate an entity and throw error if failed.",
+          "parameters": [
+            {
+              "name": "entity",
+              "type": "ClayEntity",
+              "description": "Entity to validate",
+              "default": "",
+              "optional": "",
+              "nullable": ""
+            }
+          ],
+          "examples": []
+        },
+        {
+          "name": "clone",
+          "access": "",
+          "virtual": false,
+          "description": "Clone this policy",
+          "parameters": [],
+          "examples": [],
+          "returns": {
+            "type": "ClayPolicy",
+            "description": "Cloned policy"
+          }
+        }
+      ]
+    }
+  ],
+  "functions": [
+    {
+      "name": "create",
+      "access": "",
+      "virtual": false,
+      "description": "Create a ClayPolicy instance",
+      "parameters": [
+        {
+          "name": "args",
+          "type": "*",
+          "description": "",
+          "default": "",
+          "optional": "",
+          "nullable": ""
+        }
+      ],
+      "examples": [],
+      "returns": {
+        "type": "ClayPolicy",
+        "description": ""
+      }
+    },
+    {
+      "name": "isPolicy",
+      "access": "",
+      "virtual": false,
+      "description": "",
+      "parameters": [
+        {
+          "name": "obj",
+          "type": "*",
+          "description": "",
+          "default": "",
+          "optional": "",
+          "nullable": ""
+        }
+      ],
+      "examples": [],
+      "returns": {
+        "type": "boolean",
+        "description": ""
+      }
+    }
+  ]
+}
