@@ -32,6 +32,11 @@ describe('clay-policy', function () {
       rank: {
         type: Types.STRING,
         oneOf: [ 'GOLD', 'SLIVER', 'BRONZE' ]
+      },
+      index: {
+        type: Types.NUMBER,
+        minimum: 1,
+        maximum: 10
       }
     })
     {
@@ -65,6 +70,19 @@ describe('clay-policy', function () {
         }
       })
     }
+    {
+      let rangeError = policy.validate({
+        index: -1
+      })
+      deepEqual(rangeError.detail.failures, {
+        index: {
+          actual: -1,
+          expects: { min: 1, max: 10 },
+          reason: 'range:out'
+        }
+      })
+    }
+
     ok(policy.clone())
   }))
 })

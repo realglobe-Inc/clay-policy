@@ -113,7 +113,7 @@ tryPolicy().catch((err) => console.error(err))
 API
 ---------
 
-# clay-policy@1.1.2
+# clay-policy@1.2.0
 
 Schema helpers for ClayDB resources
 
