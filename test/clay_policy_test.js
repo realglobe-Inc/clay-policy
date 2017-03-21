@@ -6,7 +6,7 @@
 
 const ClayPolicy = require('../lib/clay_policy.js')
 const Types = require('../lib/types')
-const { deepEqual, ok } = require('assert')
+const { deepEqual, equal, notEqual, ok } = require('assert')
 const co = require('co')
 
 describe('clay-policy', function () {
@@ -105,6 +105,17 @@ describe('clay-policy', function () {
     let policy02 = new ClayPolicy(policy)
     ok(policy02.validate({ foo: null }))
     ok(!policy02.validate({ foo: 'bar' }))
+  }))
+
+  it('Digest', () => co(function * () {
+    equal(
+      new ClayPolicy({ foo: { type: Types.STRING } }).toDigest(),
+      new ClayPolicy({ foo: { type: Types.STRING } }).toDigest()
+    )
+    notEqual(
+      new ClayPolicy({ foo: { type: Types.STRING } }).toDigest(),
+      new ClayPolicy({ bar: { type: Types.STRING } }).toDigest()
+    )
   }))
 })
 
