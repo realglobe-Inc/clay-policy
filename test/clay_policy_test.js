@@ -43,7 +43,13 @@ describe('clay-policy', function () {
         username: 'hoge',
         birthday: 'FOO'
       })
-      deepEqual(typeError.detail.failures, { birthday: { reason: 'type', expects: 'clay:date', actual: 'FOO' } })
+      deepEqual(typeError.detail.failures, {
+        birthday: {
+          reason: 'type:unexpected',
+          expects: 'clay:date',
+          actual: 'FOO'
+        }
+      })
     }
     {
       let enumsError = policy.validate({
@@ -51,11 +57,10 @@ describe('clay-policy', function () {
         birthday: new Date(),
         rank: 'ULTRA'
       })
-      console.log(enumsError)
       deepEqual(enumsError.detail.failures, {
         rank: {
-          reason: 'enums',
-          expects: [ 'GOLD', 'SLIVER', 'BRONZE' ],
+          reason: 'value:unexpected',
+          expects: { oneOf: [ 'GOLD', 'SLIVER', 'BRONZE' ] },
           actual: 'ULTRA'
         }
       })
