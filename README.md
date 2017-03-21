@@ -57,10 +57,10 @@ Schema helpers for ClayDB resources
 Table of Contents
 ----------------
 
-- [clay-policy](#clay-policy)
   * [Installation](#installation)
   * [Usage](#usage)
-  * [API](#api)
+  * [Field Restrictions](#field-restrictions)
+  * [API Guide](#api-guide)
   * [License](#license)
   * [Links](#links)
 
@@ -123,20 +123,42 @@ tryPolicy().catch((err) => console.error(err))
 
 <!-- Section from "doc/guides/02.Usage.md.hbs" End -->
 
-<!-- Section from "doc/guides/03.API.md.hbs" Start -->
+<!-- Section from "doc/guides/10.Field Restrictions.md.hbs" Start -->
 
-<a name="section-doc-guides-03-a-p-i-md"></a>
+<a name="section-doc-guides-10-field-restrictions-md"></a>
 
-API
+Field Restrictions
 -----
 
-+ [clay-policy@1.1.3](./doc/api/api.md)
+| Restriction | Type | Description | default |
+| ---------- | ---- | --------- | ------ |
+| **type** | string | Type of the field |  |
+| **oneOf** | array | Enum values for the field |  |
+| **required** | boolean | Value is required for the field |  |
+| **default** | any | Default value of the field |  |
+| **unique** | boolean | Add unique constraint on the field |  |
+| **minimum** | number | Minimum value of the field |  |
+| **maximum** | number | Maximum value of the field |  |
+| **minLength** | integer | Minimum length of the field |  |
+| **maxLength** | integer | Maximum length of the field |  |
+
+
+<!-- Section from "doc/guides/10.Field Restrictions.md.hbs" End -->
+
+<!-- Section from "doc/guides/11.API Guide.md.hbs" Start -->
+
+<a name="section-doc-guides-11-a-p-i-guide-md"></a>
+
+API Guide
+-----
+
++ [clay-policy@1.2.0](./doc/api/api.md)
   + [create(args)](./doc/api/api.md#clay-policy-function-create)
   + [isPolicy(obj)](./doc/api/api.md#clay-policy-function-is-policy)
   + [ClayPolicy](./doc/api/api.md#clay-policy-class)
 
 
-<!-- Section from "doc/guides/03.API.md.hbs" End -->
+<!-- Section from "doc/guides/11.API Guide.md.hbs" End -->
 
 
 <!-- Sections Start -->

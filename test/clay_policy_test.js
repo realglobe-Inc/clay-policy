@@ -32,6 +32,11 @@ describe('clay-policy', function () {
       rank: {
         type: Types.STRING,
         oneOf: [ 'GOLD', 'SLIVER', 'BRONZE' ]
+      },
+      index: {
+        type: Types.NUMBER,
+        minimum: 1,
+        maximum: 10
       }
     })
     {
@@ -65,7 +70,27 @@ describe('clay-policy', function () {
         }
       })
     }
+    {
+      let rangeError = policy.validate({
+        index: -1
+      })
+      deepEqual(rangeError.detail.failures, {
+        index: {
+          actual: -1,
+          expects: { min: 1, max: 10 },
+          reason: 'range:out'
+        }
+      })
+    }
+
     ok(policy.clone())
+  }))
+
+  it('Policy from policy', () => co(function * () {
+    let policy = new ClayPolicy({ foo: { type: Types.STRING } })
+    let policy02 = new ClayPolicy(policy)
+    ok(policy02.validate({ foo: null }))
+    ok(!policy02.validate({ foo: 'bar' }))
   }))
 })
 
