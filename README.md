@@ -57,7 +57,6 @@ Schema helpers for ClayDB resources
 Table of Contents
 ----------------
 
-- [clay-policy](#clay-policy)
   * [Installation](#installation)
   * [Usage](#usage)
   * [Field Restrictions](#field-restrictions)
