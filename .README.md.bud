@@ -22,6 +22,8 @@ module.exports = readmeMdBud({
   overview: 'doc/overview.md',
   links: require('./doc/links'),
   vars: {
+    signature: require('./misc/signature'),
+    apiPath: './doc/api/api.md'
   }
 })
 
