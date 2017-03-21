@@ -1,1 +1,8 @@
 Field Restrictions
+-----
+
+| Restriction | Type | Description | default |
+| ---------- | ---- | --------- | ------ |
+{{#each vars.PolicySchema.definitions.field.properties}}
+| **{{@key}}** | {{{type}}} | {{{description}}} | {{#if default}}`{{{default}}}`{{/if}} |
+{{/each}}

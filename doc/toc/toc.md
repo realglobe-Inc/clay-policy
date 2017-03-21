@@ -1,6 +1,7 @@
 - [clay-policy](#clay-policy)
   * [Installation](#installation)
   * [Usage](#usage)
-  * [API](#api)
+  * [Field Restrictions](#field-restrictions)
+  * [API Guide](#api-guide)
   * [License](#license)
   * [Links](#links)

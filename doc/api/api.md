@@ -6,7 +6,7 @@ Schema helpers for ClayDB resources
   + [create(args)](#clay-policy-function-create)
   + [isPolicy(obj)](#clay-policy-function-is-policy)
 + [`ClayPolicy`](#clay-policy-class) Class
-  + [new ClayPolicy(properties, options)](#clay-policy-class-clay-policy-constructor)
+  + [new ClayPolicy(properties)](#clay-policy-class-clay-policy-constructor)
   + [policy.validate(entity)](#clay-policy-class-clay-policy-validate)
   + [policy.validateToThrow(entity)](#clay-policy-class-clay-policy-validateToThrow)
   + [policy.testRestriction(restriction, value)](#clay-policy-class-clay-policy-testRestriction)
@@ -47,14 +47,13 @@ Type restrictions for clay entity
 
 <a class='md-heading-link' name="clay-policy-class-clay-policy-constructor" ></a>
 
-### new ClayPolicy(properties, options)
+### new ClayPolicy(properties)
 
 Constructor of ClayPolicy class
 
 | Param | Type | Description |
 | ----- | --- | -------- |
 | properties | Object | Property config |
-| options | Object | Optional settings |
 
 
 <a class='md-heading-link' name="clay-policy-class-clay-policy-validate" ></a>

@@ -4,7 +4,7 @@
  */
 'use strict'
 
-const restrictionHelper = require('../lib/helpers/restriction_helper.js')
+const { validateRestrictions } = require('../lib/helpers/restriction_helper.js')
 const assert = require('assert')
 const co = require('co')
 
@@ -20,7 +20,11 @@ describe('restriction-helper', function () {
   }))
 
   it('Restriction helper', () => co(function * () {
-
+    validateRestrictions({
+      foo: {
+        type: 'STRING'
+      }
+    })
   }))
 })
 

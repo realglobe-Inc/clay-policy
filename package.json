@@ -29,7 +29,8 @@
     "clay-errors": "^2.0.1",
     "clay-schemas": "^2.1.1",
     "clay-serial": "^1.1.3",
-    "co": "^4.6.0"
+    "co": "^4.6.0",
+    "tv4": "^1.3.0"
   },
   "devDependencies": {
     "ababel": "^2.0.1",

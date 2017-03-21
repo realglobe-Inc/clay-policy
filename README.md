@@ -50,6 +50,24 @@ Schema helpers for ClayDB resources
 <!-- Sections Start -->
 <a name="sections"></a>
 
+<!-- Section from "doc/guides/00.TOC.md.hbs" Start -->
+
+<a name="section-doc-guides-00-t-o-c-md"></a>
+
+Table of Contents
+----------------
+
+- [clay-policy](#clay-policy)
+  * [Installation](#installation)
+  * [Usage](#usage)
+  * [Field Restrictions](#field-restrictions)
+  * [API Guide](#api-guide)
+  * [License](#license)
+  * [Links](#links)
+
+
+<!-- Section from "doc/guides/00.TOC.md.hbs" End -->
+
 <!-- Section from "doc/guides/01.Installation.md.hbs" Start -->
 
 <a name="section-doc-guides-01-installation-md"></a>
@@ -106,118 +124,42 @@ tryPolicy().catch((err) => console.error(err))
 
 <!-- Section from "doc/guides/02.Usage.md.hbs" End -->
 
-<!-- Section from "doc/guides/03.API.md.hbs" Start -->
+<!-- Section from "doc/guides/10.Field Restrictions.md.hbs" Start -->
 
-<a name="section-doc-guides-03-a-p-i-md"></a>
+<a name="section-doc-guides-10-field-restrictions-md"></a>
 
-API
----------
+Field Restrictions
+-----
 
-# clay-policy@1.2.0
-
-Schema helpers for ClayDB resources
-
-+ Functions
-  + [create(args)](#clay-policy-function-create)
-  + [isPolicy(obj)](#clay-policy-function-is-policy)
-+ [`ClayPolicy`](#clay-policy-class) Class
-  + [new ClayPolicy(properties, options)](#clay-policy-class-clay-policy-constructor)
-  + [policy.validate(entity)](#clay-policy-class-clay-policy-validate)
-  + [policy.validateToThrow(entity)](#clay-policy-class-clay-policy-validateToThrow)
-  + [policy.testRestriction(restriction, value)](#clay-policy-class-clay-policy-testRestriction)
-  + [policy.clone()](#clay-policy-class-clay-policy-clone)
-
-## Functions
-
-<a class='md-heading-link' name="clay-policy-function-create" ></a>
-
-### create(args) -> `ClayPolicy`
-
-Create a ClayPolicy instance
-
-| Param | Type | Description |
-| ----- | --- | -------- |
-| args | * |  |
-
-<a class='md-heading-link' name="clay-policy-function-is-policy" ></a>
-
-### isPolicy(obj) -> `boolean`
+| Restriction | Type | Description | default |
+| ---------- | ---- | --------- | ------ |
+| **type** | string | Type of the field |  |
+| **oneOf** | array | Enum values for the field |  |
+| **required** | boolean | Value is required for the field |  |
+| **default** | any | Default value of the field |  |
+| **unique** | boolean | Add unique constraint on the field |  |
+| **minimum** | number | Minimum value of the field |  |
+| **maximum** | number | Maximum value of the field |  |
+| **minLength** | integer | Minimum length of the field |  |
+| **maxLength** | integer | Maximum length of the field |  |
 
 
+<!-- Section from "doc/guides/10.Field Restrictions.md.hbs" End -->
 
-| Param | Type | Description |
-| ----- | --- | -------- |
-| obj | * |  |
+<!-- Section from "doc/guides/11.API Guide.md.hbs" Start -->
 
+<a name="section-doc-guides-11-a-p-i-guide-md"></a>
 
+API Guide
+-----
 
-<a class='md-heading-link' name="clay-policy-class"></a>
-
-## `ClayPolicy` Class
-
-Type restrictions for clay entity
-
-
-
-
-<a class='md-heading-link' name="clay-policy-class-clay-policy-constructor" ></a>
-
-### new ClayPolicy(properties, options)
-
-Constructor of ClayPolicy class
-
-| Param | Type | Description |
-| ----- | --- | -------- |
-| properties | Object | Property config |
-| options | Object | Optional settings |
++ [clay-policy@1.2.0](./doc/api/api.md)
+  + [create(args)](./doc/api/api.md#clay-policy-function-create)
+  + [isPolicy(obj)](./doc/api/api.md#clay-policy-function-is-policy)
+  + [ClayPolicy](./doc/api/api.md#clay-policy-class)
 
 
-<a class='md-heading-link' name="clay-policy-class-clay-policy-validate" ></a>
-
-### policy.validate(entity) -> `PolicyError`
-
-Validate an entity
-
-| Param | Type | Description |
-| ----- | --- | -------- |
-| entity | ClayEntity | Entity to validate |
-
-
-<a class='md-heading-link' name="clay-policy-class-clay-policy-validateToThrow" ></a>
-
-### policy.validateToThrow(entity)
-
-Validate an entity and throw error if failed.
-
-| Param | Type | Description |
-| ----- | --- | -------- |
-| entity | ClayEntity | Entity to validate |
-
-
-<a class='md-heading-link' name="clay-policy-class-clay-policy-testRestriction" ></a>
-
-### policy.testRestriction(restriction, value) -> `Object`
-
-Validate a property value
-
-| Param | Type | Description |
-| ----- | --- | -------- |
-| restriction | PropertyRestriction | Property restriction |
-| value | * | Property value |
-
-
-<a class='md-heading-link' name="clay-policy-class-clay-policy-clone" ></a>
-
-### policy.clone() -> `ClayPolicy`
-
-Clone this policy
-
-
-
-
-
-
-<!-- Section from "doc/guides/03.API.md.hbs" End -->
+<!-- Section from "doc/guides/11.API Guide.md.hbs" End -->
 
 
 <!-- Sections Start -->
