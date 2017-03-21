@@ -57,11 +57,12 @@ Schema helpers for ClayDB resources
 Table of Contents
 ----------------
 
-- [Installation](#installation)
-- [Usage](#usage)
-- [API](#api)
-- [License](#license)
-- [Links](#links)
+- [clay-policy](#clay-policy)
+  * [Installation](#installation)
+  * [Usage](#usage)
+  * [API](#api)
+  * [License](#license)
+  * [Links](#links)
 
 
 <!-- Section from "doc/guides/00.TOC.md.hbs" End -->
