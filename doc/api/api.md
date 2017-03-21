@@ -1,4 +1,4 @@
-# clay-policy@1.2.1
+# clay-policy@1.2.2
 
 Schema helpers for ClayDB resources
 
@@ -11,6 +11,8 @@ Schema helpers for ClayDB resources
   + [policy.validateToThrow(entity)](#clay-policy-class-clay-policy-validateToThrow)
   + [policy.testRestriction(restriction, value)](#clay-policy-class-clay-policy-testRestriction)
   + [policy.clone()](#clay-policy-class-clay-policy-clone)
+  + [policy.toValues()](#clay-policy-class-clay-policy-toValues)
+  + [policy.toDigest()](#clay-policy-class-clay-policy-toDigest)
 
 ## Functions
 
@@ -95,6 +97,18 @@ Validate a property value
 ### policy.clone() -> `ClayPolicy`
 
 Clone this policy
+
+<a class='md-heading-link' name="clay-policy-class-clay-policy-toValues" ></a>
+
+### policy.toValues() -> `Object`
+
+Convert into JSON compatible values
+
+<a class='md-heading-link' name="clay-policy-class-clay-policy-toDigest" ></a>
+
+### policy.toDigest() -> `string`
+
+To digest string
 
 
 

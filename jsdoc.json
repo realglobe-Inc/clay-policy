@@ -101,6 +101,30 @@
             "type": "ClayPolicy",
             "description": "Cloned policy"
           }
+        },
+        {
+          "name": "toValues",
+          "access": "",
+          "virtual": false,
+          "description": "Convert into JSON compatible values",
+          "parameters": [],
+          "examples": [],
+          "returns": {
+            "type": "Object",
+            "description": "Values"
+          }
+        },
+        {
+          "name": "toDigest",
+          "access": "",
+          "virtual": false,
+          "description": "To digest string",
+          "parameters": [],
+          "examples": [],
+          "returns": {
+            "type": "string",
+            "description": "Digest String"
+          }
         }
       ]
     }
