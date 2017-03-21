@@ -9,6 +9,7 @@ Schema helpers for ClayDB resources
   + [new ClayPolicy(properties, options)](#clay-policy-classes-clay-policy-constructor)
   + [policy.validate(entity)](#clay-policy-classes-clay-policy-validate)
   + [policy.validateToThrow(entity)](#clay-policy-classes-clay-policy-validateToThrow)
+  + [policy.testRestriction(restriction, value)](#clay-policy-classes-clay-policy-testRestriction)
   + [policy.clone()](#clay-policy-classes-clay-policy-clone)
 
 ## Functions
@@ -76,6 +77,18 @@ Validate an entity and throw error if failed.
 | Param | Type | Description |
 | ----- | --- | -------- |
 | entity | ClayEntity | Entity to validate |
+
+
+<a class='md-heading-link' name="clay-policy-classes-clay-policy-testRestriction" ></a>
+
+### policy.testRestriction(restriction, value) -> `Object`
+
+Validate a property value
+
+| Param | Type | Description |
+| ----- | --- | -------- |
+| restriction | PropertyRestriction | Property restriction |
+| value | * | Property value |
 
 
 <a class='md-heading-link' name="clay-policy-classes-clay-policy-clone" ></a>

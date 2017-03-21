@@ -47,7 +47,7 @@ describe('clay-policy', function () {
         birthday: {
           reason: 'type:unexpected',
           expects: 'clay:date',
-          actual: 'FOO'
+          actual: 'clay:string'
         }
       })
     }

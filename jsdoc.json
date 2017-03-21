@@ -70,6 +70,35 @@
           "examples": []
         },
         {
+          "name": "testRestriction",
+          "access": "",
+          "virtual": false,
+          "description": "Validate a property value",
+          "parameters": [
+            {
+              "name": "restriction",
+              "type": "PropertyRestriction",
+              "description": "Property restriction",
+              "default": "",
+              "optional": "",
+              "nullable": ""
+            },
+            {
+              "name": "value",
+              "type": "*",
+              "description": "Property value",
+              "default": "",
+              "optional": "",
+              "nullable": ""
+            }
+          ],
+          "examples": [],
+          "returns": {
+            "type": "Object",
+            "description": "Restriction failure"
+          }
+        },
+        {
           "name": "clone",
           "access": "",
           "virtual": false,
@@ -126,6 +155,29 @@
         "type": "boolean",
         "description": ""
       }
+    }
+  ],
+  "properties": [
+    {
+      "name": "UNEXPECTED_TYPE",
+      "access": "",
+      "virtual": false,
+      "description": "Failure because type of the given value is not expected",
+      "type": ""
+    },
+    {
+      "name": "UNEXPECTED_VALUE",
+      "access": "",
+      "virtual": false,
+      "description": "Failure because the given value is not expected",
+      "type": ""
+    },
+    {
+      "name": "OUT_OF_RANGE",
+      "access": "",
+      "virtual": false,
+      "description": "Failure because the value out of range",
+      "type": ""
     }
   ]
 }
