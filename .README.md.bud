@@ -22,7 +22,9 @@ module.exports = readmeMdBud({
   overview: 'doc/overview.md',
   links: require('./doc/links'),
   vars: {
-    PolicySchema: require('clay-schemas').PolicySchema
+    PolicySchema: require('clay-schemas').PolicySchema,
+    signature: require('./misc/signature'),
+    apiPath: './doc/api/api.md'
   }
 })
 
