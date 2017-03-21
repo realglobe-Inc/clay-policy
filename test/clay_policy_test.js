@@ -85,6 +85,13 @@ describe('clay-policy', function () {
 
     ok(policy.clone())
   }))
+
+  it('Policy from policy', () => co(function * () {
+    let policy = new ClayPolicy({ foo: { type: Types.STRING } })
+    let policy02 = new ClayPolicy(policy)
+    ok(policy02.validate({ foo: null }))
+    ok(!policy02.validate({ foo: 'bar' }))
+  }))
 })
 
 /* global describe, before, after, it */
