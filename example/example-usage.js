@@ -20,9 +20,9 @@ async function tryPolicy () {
 
   let error = policy.validate({
     username: 'hoge',
-    rank: [ 'SUPER' ]
+    rank: 'SUPER'
   })
-  console.errors(error.detail.failures) // -> { rank: { reason: 'enums', expects: [ /* ... */ ], actual: 'ULTRA' } }
+  console.error(error.detail.failures) // -> { rank: { reason: 'enums', expects: [ /* ... */ ], actual: 'ULTRA' } }
 }
 
 tryPolicy().catch((err) => console.error(err))

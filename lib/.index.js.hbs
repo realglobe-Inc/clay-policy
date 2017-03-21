@@ -8,6 +8,7 @@
 const create = require('./create')
 const ClayPolicy = require('./clay_policy')
 const Types = require('./types')
+const Reasons = require('./reasons')
 const isPolicy = require('./is_policy')
 
 let lib = create.bind(this)
