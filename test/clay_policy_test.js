@@ -36,7 +36,8 @@ describe('clay-policy', function () {
       index: {
         type: Types.NUMBER,
         minimum: 1,
-        maximum: 10
+        maximum: 10,
+        exclusiveMaximum: true
       }
     })
     {
@@ -77,6 +78,19 @@ describe('clay-policy', function () {
       deepEqual(rangeError.detail.failures, {
         index: {
           actual: -1,
+          expects: { min: 1, max: 10 },
+          reason: 'range:out'
+        }
+      })
+    }
+
+    {
+      let rangeError = policy.validate({
+        index: 10
+      })
+      deepEqual(rangeError.detail.failures, {
+        index: {
+          actual: 10,
           expects: { min: 1, max: 10 },
           reason: 'range:out'
         }
