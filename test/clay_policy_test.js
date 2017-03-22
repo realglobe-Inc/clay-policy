@@ -52,8 +52,8 @@ describe('clay-policy', function () {
       deepEqual(typeError.detail.failures, {
         birthday: {
           reason: 'type:unexpected',
-          expects: 'clay:date',
-          actual: 'clay:string'
+          expects: 'cly:date',
+          actual: 'cly:string'
         }
       })
     }

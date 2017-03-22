@@ -4,7 +4,7 @@
  */
 'use strict'
 
-const { validateFields, formatFields } = require('../lib/helpers/restriction_helper.js')
+const { validateRestrictions, formatRestrictions } = require('../lib/helpers/restriction_helper.js')
 const { deepEqual } = require('assert')
 const co = require('co')
 
@@ -20,7 +20,7 @@ describe('restriction-helper', function () {
   }))
 
   it('Validate', () => co(function * () {
-    validateFields({
+    validateRestrictions({
       foo: {
         type: 'STRING'
       }
@@ -28,12 +28,12 @@ describe('restriction-helper', function () {
   }))
 
   it('Format', () => co(function * () {
-    let formatted = formatFields({
+    let formatted = formatRestrictions({
       foo: {
         type: 'STRING'
       }
     })
-    deepEqual(formatted, { foo: { type: 'clay:string' } })
+    deepEqual(formatted, { foo: { type: 'cly:string' } })
   }))
 })
 
