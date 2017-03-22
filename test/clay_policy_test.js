@@ -117,6 +117,14 @@ describe('clay-policy', function () {
       new ClayPolicy({ bar: { type: Types.STRING } }).toDigest()
     )
   }))
+
+  it('Invalid type', () => co(function * () {
+    new ClayPolicy({
+      foo: { type: Types.STRING },
+      bar: { type: 'STRING' },
+      baz: { type: 'HOGE' },
+    })
+  }))
 })
 
 /* global describe, before, after, it */
