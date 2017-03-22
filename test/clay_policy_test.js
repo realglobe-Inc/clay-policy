@@ -119,11 +119,19 @@ describe('clay-policy', function () {
   }))
 
   it('Invalid type', () => co(function * () {
-    new ClayPolicy({
+    let policy = new ClayPolicy({
       foo: { type: Types.STRING },
       bar: { type: 'STRING' },
-      baz: { type: 'HOGE' },
+      baz: { type: 'HOGE' }
     })
+    ok(policy)
+  }))
+
+  it('Unknown attributes', () => co(function * () {
+    let policy = new ClayPolicy({
+      foo: { type: 'STRING' }
+    })
+    ok(!policy.validate({ 'bar': 1 }))
   }))
 })
 
