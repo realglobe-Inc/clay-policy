@@ -10,6 +10,7 @@ Schema helpers for ClayDB resources
   + [policy.validate(entity)](#clay-policy-class-clay-policy-validate)
   + [policy.validateToThrow(entity)](#clay-policy-class-clay-policy-validateToThrow)
   + [policy.testRestriction(restriction, value)](#clay-policy-class-clay-policy-testRestriction)
+  + [policy.hasRestrictionFor(name)](#clay-policy-class-clay-policy-hasRestrictionFor)
   + [policy.clone()](#clay-policy-class-clay-policy-clone)
   + [policy.toValues()](#clay-policy-class-clay-policy-toValues)
   + [policy.toDigest()](#clay-policy-class-clay-policy-toDigest)
@@ -90,6 +91,17 @@ Validate a property value
 | ----- | --- | -------- |
 | restriction | PropertyRestriction | Property restriction |
 | value | * | Property value |
+
+
+<a class='md-heading-link' name="clay-policy-class-clay-policy-hasRestrictionFor" ></a>
+
+### policy.hasRestrictionFor(name) -> `boolean`
+
+Check if has restriction for a field
+
+| Param | Type | Description |
+| ----- | --- | -------- |
+| name | string | Field name |
 
 
 <a class='md-heading-link' name="clay-policy-class-clay-policy-clone" ></a>

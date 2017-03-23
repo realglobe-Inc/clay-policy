@@ -91,6 +91,27 @@
           }
         },
         {
+          "name": "hasRestrictionFor",
+          "access": "",
+          "virtual": false,
+          "description": "Check if has restriction for a field",
+          "parameters": [
+            {
+              "name": "name",
+              "type": "string",
+              "description": "Field name",
+              "default": "",
+              "optional": "",
+              "nullable": ""
+            }
+          ],
+          "examples": [],
+          "returns": {
+            "type": "boolean",
+            "description": ""
+          }
+        },
+        {
           "name": "clone",
           "access": "",
           "virtual": false,
