@@ -1,4 +1,4 @@
-# clay-policy@1.3.2
+# clay-policy@1.5.0
 
 Schema helpers for ClayDB resources
 
@@ -9,6 +9,7 @@ Schema helpers for ClayDB resources
   + [new ClayPolicy(properties)](#clay-policy-class-clay-policy-constructor)
   + [policy.validate(entity)](#clay-policy-class-clay-policy-validate)
   + [policy.validateToThrow(entity)](#clay-policy-class-clay-policy-validateToThrow)
+  + [policy.uniqueFilters(entity)](#clay-policy-class-clay-policy-uniqueFilters)
   + [policy.testRestriction(restriction, value)](#clay-policy-class-clay-policy-testRestriction)
   + [policy.hasRestrictionFor(name)](#clay-policy-class-clay-policy-hasRestrictionFor)
   + [policy.clone()](#clay-policy-class-clay-policy-clone)
@@ -79,6 +80,17 @@ Validate an entity and throw error if failed.
 | Param | Type | Description |
 | ----- | --- | -------- |
 | entity | ClayEntity | Entity to validate |
+
+
+<a class='md-heading-link' name="clay-policy-class-clay-policy-uniqueFilters" ></a>
+
+### policy.uniqueFilters(entity) -> `Array.<Object>`
+
+Define unique filter objects for entity
+
+| Param | Type | Description |
+| ----- | --- | -------- |
+| entity | ClayEntity | Entity to work with |
 
 
 <a class='md-heading-link' name="clay-policy-class-clay-policy-testRestriction" ></a>
