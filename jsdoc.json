@@ -62,6 +62,27 @@
           "examples": []
         },
         {
+          "name": "uniqueFilters",
+          "access": "",
+          "virtual": false,
+          "description": "Define unique filter objects for entity",
+          "parameters": [
+            {
+              "name": "entity",
+              "type": "ClayEntity",
+              "description": "Entity to work with",
+              "default": "",
+              "optional": "",
+              "nullable": ""
+            }
+          ],
+          "examples": [],
+          "returns": {
+            "type": "Array.<Object>",
+            "description": "Value filter objects"
+          }
+        },
+        {
           "name": "testRestriction",
           "access": "",
           "virtual": false,
