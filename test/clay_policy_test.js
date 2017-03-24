@@ -5,7 +5,7 @@
 'use strict'
 
 const ClayPolicy = require('../lib/clay_policy.js')
-const Types = require('../lib/types')
+const DataTypes = require('../lib/data_types')
 const { deepEqual, equal, notEqual, ok } = require('assert')
 const co = require('co')
 
@@ -23,18 +23,18 @@ describe('clay-policy', function () {
   it('Clay policy', () => co(function * () {
     let policy = new ClayPolicy({
       username: {
-        type: Types.STRING,
+        type: DataTypes.STRING,
         required: true
       },
       birthday: {
-        type: Types.DATE
+        type: DataTypes.DATE
       },
       rank: {
-        type: Types.STRING,
+        type: DataTypes.STRING,
         oneOf: [ 'GOLD', 'SLIVER', 'BRONZE' ]
       },
       index: {
-        type: Types.NUMBER,
+        type: DataTypes.NUMBER,
         minimum: 1,
         maximum: 10,
         exclusiveMaximum: true
@@ -101,7 +101,7 @@ describe('clay-policy', function () {
   }))
 
   it('Policy from policy', () => co(function * () {
-    let policy = new ClayPolicy({ foo: { type: Types.STRING } })
+    let policy = new ClayPolicy({ foo: { type: DataTypes.STRING } })
     let policy02 = new ClayPolicy(policy)
     ok(policy02.validate({ foo: null }))
     ok(!policy02.validate({ foo: 'bar' }))
@@ -109,18 +109,18 @@ describe('clay-policy', function () {
 
   it('Digest', () => co(function * () {
     equal(
-      new ClayPolicy({ foo: { type: Types.STRING } }).toDigest(),
-      new ClayPolicy({ foo: { type: Types.STRING } }).toDigest()
+      new ClayPolicy({ foo: { type: DataTypes.STRING } }).toDigest(),
+      new ClayPolicy({ foo: { type: DataTypes.STRING } }).toDigest()
     )
     notEqual(
-      new ClayPolicy({ foo: { type: Types.STRING } }).toDigest(),
-      new ClayPolicy({ bar: { type: Types.STRING } }).toDigest()
+      new ClayPolicy({ foo: { type: DataTypes.STRING } }).toDigest(),
+      new ClayPolicy({ bar: { type: DataTypes.STRING } }).toDigest()
     )
   }))
 
   it('Invalid type', () => co(function * () {
     let policy = new ClayPolicy({
-      foo: { type: Types.STRING },
+      foo: { type: DataTypes.STRING },
       bar: { type: 'STRING' },
       baz: { type: 'HOGE' }
     })

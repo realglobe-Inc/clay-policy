@@ -1,14 +1,14 @@
 /**
- * Test case for types.
+ * Test case for dataTypes.
  * Runs with mocha.
  */
 'use strict'
 
-const types = require('../lib/types.js')
+const dataTypes = require('../lib/data_types.js')
 const assert = require('assert')
 const co = require('co')
 
-describe('types', function () {
+describe('data-types', function () {
   this.timeout(3000)
 
   before(() => co(function * () {
@@ -19,7 +19,7 @@ describe('types', function () {
 
   }))
 
-  it('Types', () => co(function * () {
+  it('Data types', () => co(function * () {
 
   }))
 })

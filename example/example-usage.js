@@ -1,7 +1,7 @@
 'use strict'
 
 const clayPolicy = require('clay-policy')
-const { STRING, DATE } = clayPolicy.Types
+const { STRING, DATE } = clayPolicy.DataTypes
 
 async function tryPolicy () {
   const policy = clayPolicy({

@@ -7,7 +7,7 @@
 
 const create = require('./create')
 const ClayPolicy = require('./clay_policy')
-const Types = require('./types')
+const DataTypes = require('./data_types')
 const Reasons = require('./reasons')
 const isPolicy = require('./is_policy')
 
@@ -17,7 +17,7 @@ Object.assign(lib, ClayPolicy, {
   create,
   ClayPolicy,
   isPolicy,
-  Types
+  DataTypes
 })
 
 module.exports = lib
