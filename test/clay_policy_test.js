@@ -133,6 +133,14 @@ describe('clay-policy', function () {
     })
     ok(!policy.validate({ 'bar': 1 }))
   }))
+
+  it('Unique filters', () => co(function * () {
+    let policy = new ClayPolicy({
+      foo: { type: 'STRING', unique: true }
+    })
+    let filters = policy.uniqueFilters({ foo: 'bar', 'baz': 'quz' })
+    deepEqual(filters, [ { foo: 'bar' } ])
+  }))
 })
 
 /* global describe, before, after, it */
