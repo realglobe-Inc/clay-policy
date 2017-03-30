@@ -1,6 +1,6 @@
 {
   "name": "clay-policy",
-  "version": "1.5.2",
+  "version": "1.5.3",
   "description": "Schema helpers for ClayDB resources",
   "browser": "shim/browser",
   "main": "lib",
