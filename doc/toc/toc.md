@@ -2,5 +2,6 @@
 - [Usage](#usage)
 - [Field Restrictions](#field-restrictions)
 - [API Guide](#api-guide)
+- [Data Types](#data-types)
 - [License](#license)
 - [Links](#links)
