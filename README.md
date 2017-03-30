@@ -61,6 +61,7 @@ Table of Contents
 - [Usage](#usage)
 - [Field Restrictions](#field-restrictions)
 - [API Guide](#api-guide)
+- [Data Types](#data-types)
 - [License](#license)
 - [Links](#links)
 
@@ -152,13 +153,35 @@ Field Restrictions
 API Guide
 -----
 
-+ [clay-policy@1.5.1](./doc/api/api.md)
++ [clay-policy@1.5.2](./doc/api/api.md)
   + [create(args)](./doc/api/api.md#clay-policy-function-create)
   + [isPolicy(obj)](./doc/api/api.md#clay-policy-function-is-policy)
   + [ClayPolicy](./doc/api/api.md#clay-policy-class)
 
 
 <!-- Section from "doc/guides/11.API Guide.md.hbs" End -->
+
+<!-- Section from "doc/guides/12.Data Types.md.hbs" Start -->
+
+<a name="section-doc-guides-12-data-types-md"></a>
+
+Data Types
+-----
+
+Available data types
+
++ NUMBER
++ STRING
++ BOOLEAN
++ DATE
++ OBJECT
++ NULL
++ REF
++ ENTITY
++ ID
+
+
+<!-- Section from "doc/guides/12.Data Types.md.hbs" End -->
 
 
 <!-- Sections Start -->
