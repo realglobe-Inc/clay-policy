@@ -2,13 +2,9 @@ language: node_js
 node_js:
 - '7'
 before_install:
-# TODO OSS
-# - npm i npm-cli-login -g
-# - npm-cli-login -u "${NPM_USER}" -p "${NPM_PASSWORD}" -e "${NPM_EMAIL}"
-# - npm who
-- echo "registry = https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual" > $HOME/.npmrc
-- curl -u${NPM_USER}:${NPM_PASSWORD} "https://realglobe.artifactoryonline.com/realglobe/api/npm/auth" >> $HOME/.npmrc
-- cat $HOME/.npmrc
+- npm i npm-cli-login -g
+- npm-cli-login -u "${NPM_USER}" -p "${NPM_PASSWORD}" -e "${NPM_EMAIL}"
+- npm who
 install:
 - npm install jsdoc -g
 - npm install
@@ -19,4 +15,4 @@ script:
 after_success:
 - ./ci/travis/publish.js
 env:
-  secure: "QHuWoV0caH+gVP20IANvMSW/Xq13EZ+ypPXB4qwX1qBdY/ed6dEL8iuRdEo9Yf0pq9ysLw/zI58qfDgV6Cb0/kuZmYXj7VCKQ9GKBZdYDDEZIe/zTl4q5V+u+OBkXaDWjzgBX4ajjinyDCCTJkfioEGPa2/f0me8gG2+YpjduvpZ5kHN8ETqgZI9eTI1iD0h1mxs4YelWFyVVArNZ/M5/tfSYj9KzoV9bA5F2uDDGZJ3V+RgJvHetyL/7+AoTSw89oWQOMTppeX2IG34epTqDhDcA2A1O1mW2p7VEmmuw2VDSGuBltdK5RTEQFxF2EcP6I33fiv11333cUWmiX7waBVzidRKn81cHmGANo1LKVQFW0VDkPWe8AVq0lH5mQlS37bUbPrvmY387biIV7QVPU5SU7MwSyKghNMmTI47XyElOE3NG6JUKwG2Zn73E2Kj//PsEo+HbKdO5WY5qRQVDSSKl1rUCpVVq7EERow7wVOtbXGsMw99Y8oGOCSc3HP2CaJklcQek4LuyhXuMUuLBC1dnqp4zVpmjNo4XE97GdZRAdQN6KuYB6qVx5WfShynaIT/TC/HDUBJ1JX60RRzA1Df5BJUiAJs1wn7h2Edcmd/aGjnXs/TfF/caa22JYL/HlupZk+YVagQcfLbSn9UtEtJoIiTJ5IOtUyHb6dVizY="
+  secure: "CisFwZ3LvAKFIOqpdNsRYnTWGRvvrkKeXWgb0sD+sRDPRjc655LyAvTtloq5qeK5RXN0b1fR5K3zrHhbgBwkWwG/naInful2UP/b4zN2F26g9u8BY0pFMw2d7iLbZ/kMIukojSF76CMK4Ws9dFlwQ43S96Up1HXVmIXqVQnaQgBxHIy+YFS8l3e0ZNRAm+lgMHEytPKGBhb3dD4cw8EiV8chuvACqI000/x5r81Hi2wTi4Jrzq0nRyx+Nlkm/28QNbFgjJo7zuJqPxn+Zv4lJZC69M6HXv1cbTq+2HArM/4A5Nnzx9srTbyN460+36HDszH7VwE8F03+C5EbDCLKG7sC+pvvdrX2B0J2lHtm9QZ41tp159LCuReJcEpR2RRYYTTwflY4iuxZkYyRdTLp01Df1jPgzvprBiZL/csnEOFscv9cWO8VGgWCGa7yDWmaBmuD9+WTY/cPqIug2k4DHx63DegG0oRNltWKpIJXAtoqqWK0YtqSAdxkMwdFmT0plykJ2arr+Rfoxg5LJTrKg4jWatXniGlow3JtDU8mdJ7tySrO+6cy3bAWDZ25+6h9QEuqCfrpl4zXdtaX/TPHAHVoBb/JAW8JVW8TFZkq5cqZaz3MQJb4OAexktL3Qi5kCJRLVfLpFIqEBG1GpfyKhk8YGN4wv17aFThPi7GZjJM="
