@@ -136,7 +136,7 @@ Field Restrictions
 | **type** | string | Type of the field |  |
 | **oneOf** | array | Enum values for the field |  |
 | **required** | boolean | Value is required for the field |  |
-| **default** | any | Default value of the field |  |
+| **default** |  | Default value of the field |  |
 | **unique** | boolean | Add unique constraint on the field |  |
 | **minimum** | number | Minimum value of the field |  |
 | **maximum** | number | Maximum value of the field |  |
@@ -153,7 +153,7 @@ Field Restrictions
 API Guide
 -----
 
-+ [clay-policy@2.0.0](./doc/api/api.md)
++ [clay-policy@2.0.1](./doc/api/api.md)
   + [create(args)](./doc/api/api.md#clay-policy-function-create)
   + [isPolicy(obj)](./doc/api/api.md#clay-policy-function-is-policy)
   + [ClayPolicy](./doc/api/api.md#clay-policy-class)

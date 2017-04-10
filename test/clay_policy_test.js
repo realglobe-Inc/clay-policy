@@ -156,8 +156,8 @@ describe('clay-policy', function () {
     let entity = { 'bar': 'jj' }
     ok(!policy.validate(entity))
 
-    let assigning = policy.assigning(entity)
-    deepEqual(assigning, { hoge: 'a' }, 'Fill defaults')
+    let defaultsFor = policy.defaultsFor(entity)
+    deepEqual(defaultsFor, { hoge: 'a' }, 'Fill defaults')
   }))
 })
 

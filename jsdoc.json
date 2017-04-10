@@ -83,6 +83,27 @@
           }
         },
         {
+          "name": "assigning",
+          "access": "",
+          "virtual": false,
+          "description": "Get assigning values (defaults to fill)",
+          "parameters": [
+            {
+              "name": "entity",
+              "type": "ClayEntity",
+              "description": "",
+              "default": "",
+              "optional": "",
+              "nullable": ""
+            }
+          ],
+          "examples": [],
+          "returns": {
+            "type": "Object",
+            "description": "Properties to assign"
+          }
+        },
+        {
           "name": "testRestriction",
           "access": "",
           "virtual": false,
