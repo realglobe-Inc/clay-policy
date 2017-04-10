@@ -83,10 +83,10 @@
           }
         },
         {
-          "name": "assigning",
+          "name": "defaultsFor",
           "access": "",
           "virtual": false,
-          "description": "Get assigning values (defaults to fill)",
+          "description": "Get defaults values for an entity. This method does NOT update the passed entity",
           "parameters": [
             {
               "name": "entity",
@@ -100,7 +100,7 @@
           "examples": [],
           "returns": {
             "type": "Object",
-            "description": "Properties to assign"
+            "description": "Default values"
           }
         },
         {
