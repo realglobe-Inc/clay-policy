@@ -141,6 +141,24 @@ describe('clay-policy', function () {
     let filters = policy.uniqueFilters({ foo: 'bar', 'baz': 'quz' })
     deepEqual(filters, [ { foo: 'bar' } ])
   }))
+
+  it('Default values', () => co(function * () {
+    let policy = new ClayPolicy({
+      hoge: {
+        type: 'STRING',
+        default: () => 'a'
+      },
+      bar: {
+        type: 'STRING',
+        default: 'b'
+      }
+    })
+    let entity = { 'bar': 'jj' }
+    ok(!policy.validate(entity))
+
+    let assigning = policy.assigning(entity)
+    deepEqual(assigning, { hoge: 'a' }, 'Fill defaults')
+  }))
 })
 
 /* global describe, before, after, it */
