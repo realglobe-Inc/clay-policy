@@ -83,6 +83,27 @@
           }
         },
         {
+          "name": "defaultsFor",
+          "access": "",
+          "virtual": false,
+          "description": "Get defaults values for an entity. This method does NOT update the passed entity",
+          "parameters": [
+            {
+              "name": "entity",
+              "type": "ClayEntity",
+              "description": "",
+              "default": "",
+              "optional": "",
+              "nullable": ""
+            }
+          ],
+          "examples": [],
+          "returns": {
+            "type": "Object",
+            "description": "Default values"
+          }
+        },
+        {
           "name": "testRestriction",
           "access": "",
           "virtual": false,

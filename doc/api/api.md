@@ -1,4 +1,4 @@
-# clay-policy@2.0.0
+# clay-policy@2.0.1
 
 Schema helpers for ClayDB resources
 
@@ -10,6 +10,7 @@ Schema helpers for ClayDB resources
   + [policy.validate(entity)](#clay-policy-class-clay-policy-validate)
   + [policy.validateToThrow(entity)](#clay-policy-class-clay-policy-validateToThrow)
   + [policy.uniqueFilters(entity)](#clay-policy-class-clay-policy-uniqueFilters)
+  + [policy.defaultsFor(entity)](#clay-policy-class-clay-policy-defaultsFor)
   + [policy.testRestriction(restriction, value)](#clay-policy-class-clay-policy-testRestriction)
   + [policy.hasRestrictionFor(name)](#clay-policy-class-clay-policy-hasRestrictionFor)
   + [policy.clone()](#clay-policy-class-clay-policy-clone)
@@ -91,6 +92,17 @@ Define unique filter objects for entity
 | Param | Type | Description |
 | ----- | --- | -------- |
 | entity | ClayEntity | Entity to work with |
+
+
+<a class='md-heading-link' name="clay-policy-class-clay-policy-defaultsFor" ></a>
+
+### policy.defaultsFor(entity) -> `Object`
+
+Get defaults values for an entity. This method does NOT update the passed entity
+
+| Param | Type | Description |
+| ----- | --- | -------- |
+| entity | ClayEntity |  |
 
 
 <a class='md-heading-link' name="clay-policy-class-clay-policy-testRestriction" ></a>
