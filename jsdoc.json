@@ -36,6 +36,30 @@
               "default": "",
               "optional": "",
               "nullable": ""
+            },
+            {
+              "name": "options",
+              "type": "Object",
+              "description": "Optional settings",
+              "default": "{}",
+              "optional": true,
+              "nullable": ""
+            },
+            {
+              "name": "options.prefix",
+              "type": "string",
+              "description": "Error prefix",
+              "default": "",
+              "optional": true,
+              "nullable": ""
+            },
+            {
+              "name": "options.ignoreMissing",
+              "type": "boolean",
+              "description": "Ignore missing",
+              "default": "",
+              "optional": true,
+              "nullable": ""
             }
           ],
           "examples": [],
@@ -77,6 +101,14 @@
               "description": "Entity to validate",
               "default": "",
               "optional": "",
+              "nullable": ""
+            },
+            {
+              "name": "options",
+              "type": "Object",
+              "description": "Optional settings",
+              "default": "{}",
+              "optional": true,
               "nullable": ""
             }
           ],

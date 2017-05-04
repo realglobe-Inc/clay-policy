@@ -45,6 +45,10 @@ describe('clay-policy', function () {
       deepEqual(missingError.detail.missing, [ 'username' ])
     }
     {
+      let missingError = policy.validate({}, { ignoreMissing: true })
+      ok(!missingError)
+    }
+    {
       let typeError = policy.validate({
         username: 'hoge',
         birthday: 'FOO'

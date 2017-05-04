@@ -1,4 +1,4 @@
-# clay-policy@2.0.6
+# clay-policy@2.0.7
 
 Schema helpers for ClayDB resources
 
@@ -7,9 +7,9 @@ Schema helpers for ClayDB resources
   + [isPolicy(obj)](#clay-policy-function-is-policy)
 + [`ClayPolicy`](#clay-policy-class) Class
   + [new ClayPolicy(properties)](#clay-policy-class-clay-policy-constructor)
-  + [policy.validate(entity)](#clay-policy-class-clay-policy-validate)
+  + [policy.validate(entity, options)](#clay-policy-class-clay-policy-validate)
   + [policy.format(entity)](#clay-policy-class-clay-policy-format)
-  + [policy.validateToThrow(entity)](#clay-policy-class-clay-policy-validateToThrow)
+  + [policy.validateToThrow(entity, options)](#clay-policy-class-clay-policy-validateToThrow)
   + [policy.uniqueFilters(entity)](#clay-policy-class-clay-policy-uniqueFilters)
   + [policy.defaultsFor(entity)](#clay-policy-class-clay-policy-defaultsFor)
   + [policy.testRestriction(restriction, value, options)](#clay-policy-class-clay-policy-testRestriction)
@@ -64,13 +64,16 @@ Constructor of ClayPolicy class
 
 <a class='md-heading-link' name="clay-policy-class-clay-policy-validate" ></a>
 
-### policy.validate(entity) -> `PolicyError`
+### policy.validate(entity, options) -> `PolicyError`
 
 Validate an entity
 
 | Param | Type | Description |
 | ----- | --- | -------- |
 | entity | ClayEntity | Entity to validate |
+| options | Object | Optional settings |
+| options.prefix | string | Error prefix |
+| options.ignoreMissing | boolean | Ignore missing |
 
 
 <a class='md-heading-link' name="clay-policy-class-clay-policy-format" ></a>
@@ -86,13 +89,14 @@ Format entity values. Note this method is DESTRUCTIVE.
 
 <a class='md-heading-link' name="clay-policy-class-clay-policy-validateToThrow" ></a>
 
-### policy.validateToThrow(entity)
+### policy.validateToThrow(entity, options)
 
 Validate an entity and throw error if failed.
 
 | Param | Type | Description |
 | ----- | --- | -------- |
 | entity | ClayEntity | Entity to validate |
+| options | Object | Optional settings |
 
 
 <a class='md-heading-link' name="clay-policy-class-clay-policy-uniqueFilters" ></a>
