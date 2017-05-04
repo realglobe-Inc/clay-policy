@@ -300,6 +300,13 @@
       "virtual": false,
       "description": "Failure because an array passed to none-multiple field",
       "type": ""
+    },
+    {
+      "name": "PATTERN_NOT_MATCHED",
+      "access": "",
+      "virtual": false,
+      "description": "Not matched the pattern",
+      "type": ""
     }
   ]
 }
