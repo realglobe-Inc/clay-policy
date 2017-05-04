@@ -139,7 +139,9 @@ describe('clay-policy', function () {
       foo: { type: 'STRING', pattern: /^[a-z]+\/[1-9]+$/ }
     })
     ok(!policy.validate({ 'foo': 'abc/123' }))
-    ok(policy.validate({ 'foo': 'zzz' }))
+    let error = policy.validate({ 'foo': 'zzz' }, { prefix: 'HOGEHOGE' })
+    ok(error.message.match('HOGEHOGE'))
+    ok(error)
   }))
 
   it('Unique filters', () => co(function * () {
