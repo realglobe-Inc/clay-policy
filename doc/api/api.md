@@ -1,4 +1,4 @@
-# clay-policy@2.0.1
+# clay-policy@2.0.2
 
 Schema helpers for ClayDB resources
 
@@ -8,10 +8,11 @@ Schema helpers for ClayDB resources
 + [`ClayPolicy`](#clay-policy-class) Class
   + [new ClayPolicy(properties)](#clay-policy-class-clay-policy-constructor)
   + [policy.validate(entity)](#clay-policy-class-clay-policy-validate)
+  + [policy.format(entity)](#clay-policy-class-clay-policy-format)
   + [policy.validateToThrow(entity)](#clay-policy-class-clay-policy-validateToThrow)
   + [policy.uniqueFilters(entity)](#clay-policy-class-clay-policy-uniqueFilters)
   + [policy.defaultsFor(entity)](#clay-policy-class-clay-policy-defaultsFor)
-  + [policy.testRestriction(restriction, value)](#clay-policy-class-clay-policy-testRestriction)
+  + [policy.testRestriction(restriction, value, options)](#clay-policy-class-clay-policy-testRestriction)
   + [policy.hasRestrictionFor(name)](#clay-policy-class-clay-policy-hasRestrictionFor)
   + [policy.clone()](#clay-policy-class-clay-policy-clone)
   + [policy.toValues()](#clay-policy-class-clay-policy-toValues)
@@ -72,6 +73,17 @@ Validate an entity
 | entity | ClayEntity | Entity to validate |
 
 
+<a class='md-heading-link' name="clay-policy-class-clay-policy-format" ></a>
+
+### policy.format(entity) -> `ClayEntity`
+
+Format entity values. Note this method is DESTRUCTIVE.
+
+| Param | Type | Description |
+| ----- | --- | -------- |
+| entity | ClayEntity | Entity to format |
+
+
 <a class='md-heading-link' name="clay-policy-class-clay-policy-validateToThrow" ></a>
 
 ### policy.validateToThrow(entity)
@@ -107,7 +119,7 @@ Get defaults values for an entity. This method does NOT update the passed entity
 
 <a class='md-heading-link' name="clay-policy-class-clay-policy-testRestriction" ></a>
 
-### policy.testRestriction(restriction, value) -> `Object`
+### policy.testRestriction(restriction, value, options) -> `Object`
 
 Validate a property value
 
@@ -115,6 +127,7 @@ Validate a property value
 | ----- | --- | -------- |
 | restriction | PropertyRestriction | Property restriction |
 | value | * | Property value |
+| options | Object | Optional settings |
 
 
 <a class='md-heading-link' name="clay-policy-class-clay-policy-hasRestrictionFor" ></a>

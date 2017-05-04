@@ -133,15 +133,18 @@ Field Restrictions
 
 | Restriction | Type | Description | default |
 | ---------- | ---- | --------- | ------ |
-| **type** | string | Type of the field |  |
-| **oneOf** | array | Enum values for the field |  |
+| **type** | string | Type of the field. Possible values are defined as DataTypes in clay-constants package. |  |
+| **oneOf** | array | Enum values for the field (Only for STRING type) |  |
 | **required** | boolean | Value is required for the field |  |
 | **default** |  | Default value of the field |  |
 | **unique** | boolean | Add unique constraint on the field |  |
-| **minimum** | number | Minimum value of the field |  |
-| **maximum** | number | Maximum value of the field |  |
+| **minimum** | number | Minimum value of the field (Only for NUMBER type) |  |
+| **maximum** | number | Maximum value of the field (Only for NUMBER type) |  |
 | **minLength** | integer | Minimum length of the field |  |
 | **maxLength** | integer | Maximum length of the field |  |
+| **trim** | boolean | Trim value. (Only for STRING type) |  |
+| **pattern** | string | Restrict value with pattern. (Only for STRING type) |  |
+| **multiple** | boolean | Field can contain multiple value. Type restriction will be applied to each items |  |
 
 
 <!-- Section from "doc/guides/10.Field Restrictions.md.hbs" End -->
@@ -153,7 +156,7 @@ Field Restrictions
 API Guide
 -----
 
-+ [clay-policy@2.0.1](./doc/api/api.md)
++ [clay-policy@2.0.2](./doc/api/api.md)
   + [create(args)](./doc/api/api.md#clay-policy-function-create)
   + [isPolicy(obj)](./doc/api/api.md#clay-policy-function-is-policy)
   + [ClayPolicy](./doc/api/api.md#clay-policy-class)

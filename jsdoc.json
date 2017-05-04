@@ -45,6 +45,27 @@
           }
         },
         {
+          "name": "format",
+          "access": "",
+          "virtual": false,
+          "description": "Format entity values. Note this method is DESTRUCTIVE.",
+          "parameters": [
+            {
+              "name": "entity",
+              "type": "ClayEntity",
+              "description": "Entity to format",
+              "default": "",
+              "optional": "",
+              "nullable": ""
+            }
+          ],
+          "examples": [],
+          "returns": {
+            "type": "ClayEntity",
+            "description": "Formatted entity. Same instance with the passed one"
+          }
+        },
+        {
           "name": "validateToThrow",
           "access": "",
           "virtual": false,
@@ -123,6 +144,14 @@
               "description": "Property value",
               "default": "",
               "optional": "",
+              "nullable": ""
+            },
+            {
+              "name": "options",
+              "type": "Object",
+              "description": "Optional settings",
+              "default": "{}",
+              "optional": true,
               "nullable": ""
             }
           ],
@@ -263,6 +292,13 @@
       "access": "",
       "virtual": false,
       "description": "Failure because the length of value out of range",
+      "type": ""
+    },
+    {
+      "name": "MULTIPLE_NOT_ALLOWED",
+      "access": "",
+      "virtual": false,
+      "description": "Failure because an array passed to none-multiple field",
       "type": ""
     }
   ]

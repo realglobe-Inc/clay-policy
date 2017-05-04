@@ -142,6 +142,31 @@ describe('clay-policy', function () {
     deepEqual(filters, [ { foo: 'bar' } ])
   }))
 
+  it('Forbid multiple', () => co(function * () {
+    {
+      let policy = new ClayPolicy({
+        foo: { type: 'STRING', multiple: false }
+      })
+      ok(policy.validate({ foo: [ 'foo' ] }))
+    }
+    {
+      let policy = new ClayPolicy({
+        foo: { type: 'STRING', multiple: true }
+      })
+      ok(!policy.validate({ foo: [ 'foo' ] }))
+
+      deepEqual(
+        policy.validate({ foo: [ 'foo', 2 ] }).detail.failures.foo,
+        {
+          actual: 'cly:number',
+          expects: 'cly:string',
+          index: 1,
+          reason: 'type:unexpected'
+        }
+      )
+    }
+  }))
+
   it('Default values', () => co(function * () {
     let policy = new ClayPolicy({
       hoge: {

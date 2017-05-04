@@ -22,7 +22,7 @@ describe('restriction-helper', function () {
   it('Validate', () => co(function * () {
     validateRestrictions({
       foo: {
-        type: 'STRING'
+        type: 'HOGE'
       }
     })
   }))
