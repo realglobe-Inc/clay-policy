@@ -136,9 +136,9 @@ describe('clay-policy', function () {
 
   it('Pattern match', () => co(function * () {
     let policy = new ClayPolicy({
-      foo: { type: 'STRING', pattern: '^[a-x]+$' }
+      foo: { type: 'STRING', pattern: /^[a-z]+\/[1-9]+$/ }
     })
-    ok(!policy.validate({ 'foo': 'abc' }))
+    ok(!policy.validate({ 'foo': 'abc/123' }))
     ok(policy.validate({ 'foo': 'zzz' }))
   }))
 
