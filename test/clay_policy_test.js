@@ -134,6 +134,14 @@ describe('clay-policy', function () {
     ok(!policy.validate({ 'bar': 1 }))
   }))
 
+  it('Pattern match', () => co(function * () {
+    let policy = new ClayPolicy({
+      foo: { type: 'STRING', pattern: '^[a-x]+$' }
+    })
+    ok(!policy.validate({ 'foo': 'abc' }))
+    ok(policy.validate({ 'foo': 'zzz' }))
+  }))
+
   it('Unique filters', () => co(function * () {
     let policy = new ClayPolicy({
       foo: { type: 'STRING', unique: true }
