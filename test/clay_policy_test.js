@@ -55,7 +55,7 @@ describe('clay-policy', function () {
       })
       deepEqual(typeError.detail.failures, {
         birthday: {
-          reason: 'type:unexpected',
+          reason: 'UNEXPECTED_TYPE_ERROR',
           expects: 'cly:date',
           actual: 'cly:string'
         }
@@ -67,9 +67,10 @@ describe('clay-policy', function () {
         birthday: new Date(),
         rank: 'ULTRA'
       })
+      ok(enumsError.message)
       deepEqual(enumsError.detail.failures, {
         rank: {
-          reason: 'value:unexpected',
+          reason: 'UNEXPECTED_VALUE_ERROR',
           expects: { oneOf: [ 'GOLD', 'SLIVER', 'BRONZE' ] },
           actual: 'ULTRA'
         }
@@ -83,7 +84,7 @@ describe('clay-policy', function () {
         index: {
           actual: -1,
           expects: { min: 1, max: 10 },
-          reason: 'range:out'
+          reason: 'OUT_OF_RANGE_ERROR'
         }
       })
     }
@@ -96,7 +97,7 @@ describe('clay-policy', function () {
         index: {
           actual: 10,
           expects: { min: 1, max: 10 },
-          reason: 'range:out'
+          reason: 'OUT_OF_RANGE_ERROR'
         }
       })
     }
@@ -175,7 +176,7 @@ describe('clay-policy', function () {
           actual: 'cly:number',
           expects: 'cly:string',
           index: 1,
-          reason: 'type:unexpected'
+          reason: 'UNEXPECTED_TYPE_ERROR'
         }
       )
     }
