@@ -151,10 +151,20 @@ describe('clay-policy', function () {
 
   it('Unique filters', () => co(function * () {
     let policy = new ClayPolicy({
-      foo: { type: 'STRING', unique: true }
+      foo: { type: 'STRING', unique: true },
+      group: { type: 'STRING' },
+      kind: { type: 'BOOLEAN' },
+      index: { type: 'STRING', uniqueFor: [ 'group', 'kind' ] }
     })
-    let filters = policy.uniqueFilters({ foo: 'bar', 'baz': 'quz' })
-    deepEqual(filters, [ { foo: 'bar' } ])
+    deepEqual(
+      policy.uniqueFilters({ foo: 'bar', 'baz': 'quz' }),
+      [ { foo: 'bar' } ]
+    )
+
+    deepEqual(
+      policy.uniqueFilters({ group: 'A', kind: 'x', index: 1 }),
+      [ { index: 1, group: 'A', kind: 'x' } ]
+    )
   }))
 
   it('Forbid multiple', () => co(function * () {
