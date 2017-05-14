@@ -138,6 +138,7 @@ Field Restrictions
 | **required** | boolean | Value is required for the field |  |
 | **default** |  | Default value of the field |  |
 | **unique** | boolean | Add unique constraint on the field |  |
+| **uniqueFor** | array | Names of attributes to make unique for |  |
 | **minimum** | number | Minimum value of the field (Only for NUMBER type) |  |
 | **maximum** | number | Maximum value of the field (Only for NUMBER type) |  |
 | **minLength** | integer | Minimum length of the field |  |
