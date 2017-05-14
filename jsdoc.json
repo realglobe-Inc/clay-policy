@@ -339,6 +339,13 @@
       "virtual": false,
       "description": "Not matched the pattern",
       "type": ""
+    },
+    {
+      "name": "UNIQUE_VIOLATION",
+      "access": "",
+      "virtual": false,
+      "description": "Unique violation",
+      "type": ""
     }
   ]
 }
