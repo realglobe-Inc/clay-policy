@@ -346,6 +346,13 @@
       "virtual": false,
       "description": "Unique violation",
       "type": ""
+    },
+    {
+      "name": "VALIDATION_FAILED",
+      "access": "",
+      "virtual": false,
+      "description": "Validation failed",
+      "type": ""
     }
   ]
 }
