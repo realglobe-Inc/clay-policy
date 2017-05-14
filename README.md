@@ -138,7 +138,6 @@ Field Restrictions
 | **required** | boolean | Value is required for the field |  |
 | **default** |  | Default value of the field |  |
 | **unique** | boolean | Add unique constraint on the field |  |
-| **uniqueFor** | array | Names of attributes to make unique for |  |
 | **minimum** | number | Minimum value of the field (Only for NUMBER type) |  |
 | **maximum** | number | Maximum value of the field (Only for NUMBER type) |  |
 | **minLength** | integer | Minimum length of the field |  |
@@ -157,7 +156,7 @@ Field Restrictions
 API Guide
 -----
 
-+ [clay-policy@2.0.11](./doc/api/api.md)
++ [clay-policy@2.0.12](./doc/api/api.md)
   + [create(args)](./doc/api/api.md#clay-policy-function-create)
   + [isPolicy(obj)](./doc/api/api.md#clay-policy-function-is-policy)
   + [ClayPolicy](./doc/api/api.md#clay-policy-class)
