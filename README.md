@@ -133,7 +133,7 @@ Field Restrictions
 
 | Restriction | Type | Description | default |
 | ---------- | ---- | --------- | ------ |
-| **type** | string | Type of the field. Possible values are defined as DataTypes in clay-constants package. |  |
+| **type** |  | Type of the field. Possible values are defined as DataTypes in clay-constants package. |  |
 | **oneOf** | array | Enum values for the field (Only for STRING type) |  |
 | **required** | boolean | Value is required for the field |  |
 | **default** |  | Default value of the field |  |
@@ -157,7 +157,7 @@ Field Restrictions
 API Guide
 -----
 
-+ [clay-policy@2.0.14](./doc/api/api.md)
++ [clay-policy@2.0.15](./doc/api/api.md)
   + [create(args)](./doc/api/api.md#clay-policy-function-create)
   + [isPolicy(obj)](./doc/api/api.md#clay-policy-function-is-policy)
   + [ClayPolicy](./doc/api/api.md#clay-policy-class)

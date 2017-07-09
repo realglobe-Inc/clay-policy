@@ -27,7 +27,7 @@ describe('clay-policy', function () {
         required: true
       },
       birthday: {
-        type: DataTypes.DATE
+        type: [ DataTypes.DATE, DataTypes.NUMBER ]
       },
       rank: {
         type: DataTypes.STRING,
@@ -40,6 +40,14 @@ describe('clay-policy', function () {
         exclusiveMaximum: true
       }
     })
+    ok(
+      !policy.validate({
+        username: 'hoge',
+        birthday: new Date(),
+        rank: 'GOLD',
+        index: 2
+      })
+    )
     {
       let missingError = policy.validate({})
       deepEqual(missingError.detail.missing, [ 'username' ])
@@ -56,7 +64,10 @@ describe('clay-policy', function () {
       deepEqual(typeError.detail.failures, {
         birthday: {
           reason: 'UNEXPECTED_TYPE_ERROR',
-          expects: 'cly:date',
+          expects: [
+            'cly:date',
+            'cly:number'
+          ],
           actual: 'cly:string'
         }
       })
