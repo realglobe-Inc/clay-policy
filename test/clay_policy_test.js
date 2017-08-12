@@ -6,7 +6,7 @@
 
 const ClayPolicy = require('../lib/clay_policy.js')
 const DataTypes = require('../lib/data_types')
-const { deepEqual, equal, notEqual, ok } = require('assert')
+const {deepEqual, equal, notEqual, ok} = require('assert')
 const co = require('co')
 
 describe('clay-policy', function () {
@@ -21,17 +21,17 @@ describe('clay-policy', function () {
   }))
 
   it('Clay policy', () => co(function * () {
-    let policy = new ClayPolicy({
+    const policy = new ClayPolicy({
       username: {
         type: DataTypes.STRING,
         required: true
       },
       birthday: {
-        type: [ DataTypes.DATE, DataTypes.NUMBER ]
+        type: [DataTypes.DATE, DataTypes.NUMBER]
       },
       rank: {
         type: DataTypes.STRING,
-        oneOf: [ 'GOLD', 'SLIVER', 'BRONZE' ]
+        oneOf: ['GOLD', 'SLIVER', 'BRONZE']
       },
       index: {
         type: DataTypes.NUMBER,
@@ -49,20 +49,40 @@ describe('clay-policy', function () {
       })
     )
     {
-      let missingError = policy.validate({})
-      deepEqual(missingError.detail.missing, [ 'username' ])
+      const missingError = policy.validate({})
+      deepEqual(missingError.detail.missing, ['username'])
     }
     {
-      let missingError = policy.validate({}, { ignoreMissing: true })
+      const missingError = policy.validate({}, {namespace: 'hoge'})
+      deepEqual(missingError.detail.missing, ['hoge.username'])
+    }
+    {
+      const missingError = policy.validate({}, {ignoreMissing: true})
       ok(!missingError)
     }
     {
-      let typeError = policy.validate({
+      const typeError = policy.validate({
         username: 'hoge',
         birthday: 'FOO'
       })
       deepEqual(typeError.detail.failures, {
         birthday: {
+          reason: 'UNEXPECTED_TYPE_ERROR',
+          expects: [
+            'cly:date',
+            'cly:number'
+          ],
+          actual: 'cly:string'
+        }
+      })
+    }
+    {
+      const typeError = policy.validate({
+        username: 'hoge',
+        birthday: 'FOO'
+      }, {namespace: 'user'})
+      deepEqual(typeError.detail.failures, {
+        'user.birthday': {
           reason: 'UNEXPECTED_TYPE_ERROR',
           expects: [
             'cly:date',
@@ -82,7 +102,7 @@ describe('clay-policy', function () {
       deepEqual(enumsError.detail.failures, {
         rank: {
           reason: 'UNEXPECTED_VALUE_ERROR',
-          expects: { oneOf: [ 'GOLD', 'SLIVER', 'BRONZE' ] },
+          expects: {oneOf: ['GOLD', 'SLIVER', 'BRONZE']},
           actual: 'ULTRA'
         }
       })
@@ -94,7 +114,7 @@ describe('clay-policy', function () {
       deepEqual(rangeError.detail.failures, {
         index: {
           actual: -1,
-          expects: { min: 1, max: 10 },
+          expects: {min: 1, max: 10},
           reason: 'OUT_OF_RANGE_ERROR'
         }
       })
@@ -107,7 +127,7 @@ describe('clay-policy', function () {
       deepEqual(rangeError.detail.failures, {
         index: {
           actual: 10,
-          expects: { min: 1, max: 10 },
+          expects: {min: 1, max: 10},
           reason: 'OUT_OF_RANGE_ERROR'
         }
       })
@@ -117,82 +137,82 @@ describe('clay-policy', function () {
   }))
 
   it('Policy from policy', () => co(function * () {
-    let policy = new ClayPolicy({ foo: { type: DataTypes.STRING } })
+    let policy = new ClayPolicy({foo: {type: DataTypes.STRING}})
     let policy02 = new ClayPolicy(policy)
-    ok(policy02.validate({ foo: null }))
-    ok(!policy02.validate({ foo: 'bar' }))
+    ok(policy02.validate({foo: null}))
+    ok(!policy02.validate({foo: 'bar'}))
   }))
 
   it('Digest', () => co(function * () {
     equal(
-      new ClayPolicy({ foo: { type: DataTypes.STRING } }).toDigest(),
-      new ClayPolicy({ foo: { type: DataTypes.STRING } }).toDigest()
+      new ClayPolicy({foo: {type: DataTypes.STRING}}).toDigest(),
+      new ClayPolicy({foo: {type: DataTypes.STRING}}).toDigest()
     )
     notEqual(
-      new ClayPolicy({ foo: { type: DataTypes.STRING } }).toDigest(),
-      new ClayPolicy({ bar: { type: DataTypes.STRING } }).toDigest()
+      new ClayPolicy({foo: {type: DataTypes.STRING}}).toDigest(),
+      new ClayPolicy({bar: {type: DataTypes.STRING}}).toDigest()
     )
   }))
 
   it('Invalid type', () => co(function * () {
     let policy = new ClayPolicy({
-      foo: { type: DataTypes.STRING },
-      bar: { type: 'STRING' },
-      baz: { type: 'HOGE' }
+      foo: {type: DataTypes.STRING},
+      bar: {type: 'STRING'},
+      baz: {type: 'HOGE'}
     })
     ok(policy)
   }))
 
   it('Unknown attributes', () => co(function * () {
     let policy = new ClayPolicy({
-      foo: { type: 'STRING' }
+      foo: {type: 'STRING'}
     })
-    ok(!policy.validate({ 'bar': 1 }))
+    ok(!policy.validate({'bar': 1}))
   }))
 
   it('Pattern match', () => co(function * () {
     let policy = new ClayPolicy({
-      foo: { type: 'STRING', pattern: /^[a-z]+\/[1-9]+$/ }
+      foo: {type: 'STRING', pattern: /^[a-z]+\/[1-9]+$/}
     })
-    ok(!policy.validate({ 'foo': 'abc/123' }))
-    let error = policy.validate({ 'foo': 'zzz' }, { prefix: 'HOGEHOGE' })
+    ok(!policy.validate({'foo': 'abc/123'}))
+    let error = policy.validate({'foo': 'zzz'}, {prefix: 'HOGEHOGE'})
     ok(error.message.match('HOGEHOGE'))
     ok(error)
   }))
 
   it('Unique filters', () => co(function * () {
     let policy = new ClayPolicy({
-      foo: { type: 'STRING', unique: true },
-      group: { type: 'STRING' },
-      kind: { type: 'BOOLEAN' },
-      index: { type: 'STRING', uniqueFor: [ 'group', 'kind' ] }
+      foo: {type: 'STRING', unique: true},
+      group: {type: 'STRING'},
+      kind: {type: 'BOOLEAN'},
+      index: {type: 'STRING', uniqueFor: ['group', 'kind']}
     })
     deepEqual(
-      policy.uniqueFilters({ foo: 'bar', 'baz': 'quz' }),
-      [ { foo: 'bar' } ]
+      policy.uniqueFilters({foo: 'bar', 'baz': 'quz'}),
+      [{foo: 'bar'}]
     )
 
     deepEqual(
-      policy.uniqueFilters({ group: 'A', kind: 'x', index: 1 }),
-      [ { index: 1, group: 'A', kind: 'x' } ]
+      policy.uniqueFilters({group: 'A', kind: 'x', index: 1}),
+      [{index: 1, group: 'A', kind: 'x'}]
     )
   }))
 
   it('Forbid multiple', () => co(function * () {
     {
       let policy = new ClayPolicy({
-        foo: { type: 'STRING', multiple: false }
+        foo: {type: 'STRING', multiple: false}
       })
-      ok(policy.validate({ foo: [ 'foo' ] }))
+      ok(policy.validate({foo: ['foo']}))
     }
     {
       let policy = new ClayPolicy({
-        foo: { type: 'STRING', multiple: true }
+        foo: {type: 'STRING', multiple: true}
       })
-      ok(!policy.validate({ foo: [ 'foo' ] }))
+      ok(!policy.validate({foo: ['foo']}))
 
       deepEqual(
-        policy.validate({ foo: [ 'foo', 2 ] }).detail.failures.foo,
+        policy.validate({foo: ['foo', 2]}).detail.failures.foo,
         {
           actual: 'cly:number',
           expects: 'cly:string',
@@ -214,11 +234,11 @@ describe('clay-policy', function () {
         default: 'b'
       }
     })
-    let entity = { 'bar': 'jj' }
+    let entity = {'bar': 'jj'}
     ok(!policy.validate(entity))
 
     let defaultsFor = policy.defaultsFor(entity)
-    deepEqual(defaultsFor, { hoge: 'a' }, 'Fill defaults')
+    deepEqual(defaultsFor, {hoge: 'a'}, 'Fill defaults')
   }))
 })
 

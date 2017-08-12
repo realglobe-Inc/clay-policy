@@ -48,7 +48,15 @@
             {
               "name": "options.prefix",
               "type": "string",
-              "description": "Error prefix",
+              "description": "Error message prefix",
+              "default": "",
+              "optional": true,
+              "nullable": ""
+            },
+            {
+              "name": "options.fieldScope",
+              "type": "string",
+              "description": "Scope for each fields",
               "default": "",
               "optional": true,
               "nullable": ""
