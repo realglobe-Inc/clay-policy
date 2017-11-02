@@ -7,20 +7,19 @@
 const ClayPolicy = require('../lib/clay_policy.js')
 const DataTypes = require('../lib/data_types')
 const {deepEqual, equal, notEqual, ok} = require('assert')
-const co = require('co')
 
 describe('clay-policy', function () {
   this.timeout(3000)
 
-  before(() => co(function * () {
+  before(async () => {
 
-  }))
+  })
 
-  after(() => co(function * () {
+  after(async () => {
 
-  }))
+  })
 
-  it('Clay policy', () => co(function * () {
+  it('Clay policy', async () => {
     const policy = new ClayPolicy({
       username: {
         type: DataTypes.STRING,
@@ -134,16 +133,16 @@ describe('clay-policy', function () {
     }
 
     ok(policy.clone())
-  }))
+  })
 
-  it('Policy from policy', () => co(function * () {
-    let policy = new ClayPolicy({foo: {type: DataTypes.STRING}})
-    let policy02 = new ClayPolicy(policy)
-    ok(policy02.validate({foo: null}))
+  it('Policy from policy', async () => {
+    const policy = new ClayPolicy({foo: {type: DataTypes.STRING}})
+    const policy02 = new ClayPolicy(policy)
+    ok(policy02.validate({foo: 123}))
     ok(!policy02.validate({foo: 'bar'}))
-  }))
+  })
 
-  it('Digest', () => co(function * () {
+  it('Digest', async () => {
     equal(
       new ClayPolicy({foo: {type: DataTypes.STRING}}).toDigest(),
       new ClayPolicy({foo: {type: DataTypes.STRING}}).toDigest()
@@ -152,25 +151,25 @@ describe('clay-policy', function () {
       new ClayPolicy({foo: {type: DataTypes.STRING}}).toDigest(),
       new ClayPolicy({bar: {type: DataTypes.STRING}}).toDigest()
     )
-  }))
+  })
 
-  it('Invalid type', () => co(function * () {
+  it('Invalid type', async () => {
     let policy = new ClayPolicy({
       foo: {type: DataTypes.STRING},
       bar: {type: 'STRING'},
       baz: {type: 'HOGE'}
     })
     ok(policy)
-  }))
+  })
 
-  it('Unknown attributes', () => co(function * () {
+  it('Unknown attributes', async () => {
     let policy = new ClayPolicy({
       foo: {type: 'STRING'}
     })
     ok(!policy.validate({'bar': 1}))
-  }))
+  })
 
-  it('Pattern match', () => co(function * () {
+  it('Pattern match', async () => {
     let policy = new ClayPolicy({
       foo: {type: 'STRING', pattern: /^[a-z]+\/[1-9]+$/}
     })
@@ -178,9 +177,9 @@ describe('clay-policy', function () {
     let error = policy.validate({'foo': 'zzz'}, {prefix: 'HOGEHOGE'})
     ok(error.message.match('HOGEHOGE'))
     ok(error)
-  }))
+  })
 
-  it('Unique filters', () => co(function * () {
+  it('Unique filters', async () => {
     let policy = new ClayPolicy({
       foo: {type: 'STRING', unique: true},
       group: {type: 'STRING'},
@@ -196,9 +195,9 @@ describe('clay-policy', function () {
       policy.uniqueFilters({group: 'A', kind: 'x', index: 1}),
       [{index: 1, group: 'A', kind: 'x'}]
     )
-  }))
+  })
 
-  it('Forbid multiple', () => co(function * () {
+  it('Forbid multiple', async () => {
     {
       let policy = new ClayPolicy({
         foo: {type: 'STRING', multiple: false}
@@ -221,9 +220,9 @@ describe('clay-policy', function () {
         }
       )
     }
-  }))
+  })
 
-  it('Default values', () => co(function * () {
+  it('Default values', async () => {
     let policy = new ClayPolicy({
       hoge: {
         type: 'STRING',
@@ -239,7 +238,7 @@ describe('clay-policy', function () {
 
     let defaultsFor = policy.defaultsFor(entity)
     deepEqual(defaultsFor, {hoge: 'a'}, 'Fill defaults')
-  }))
+  })
 })
 
 /* global describe, before, after, it */
