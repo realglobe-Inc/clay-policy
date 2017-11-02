@@ -54,9 +54,9 @@
               "nullable": ""
             },
             {
-              "name": "options.fieldScope",
+              "name": "options.namespace",
               "type": "string",
-              "description": "Scope for each fields",
+              "description": "Namespace for each fields",
               "default": "",
               "optional": true,
               "nullable": ""

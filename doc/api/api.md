@@ -1,4 +1,4 @@
-# clay-policy@2.0.17
+# clay-policy@2.1.1
 
 Schema helpers for ClayDB resources
 
@@ -73,7 +73,7 @@ Validate an entity
 | entity | ClayEntity | Entity to validate |
 | options | Object | Optional settings |
 | options.prefix | string | Error message prefix |
-| options.fieldScope | string | Scope for each fields |
+| options.namespace | string | Namespace for each fields |
 | options.ignoreMissing | boolean | Ignore missing |
 
 
