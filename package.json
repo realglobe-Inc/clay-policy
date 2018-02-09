@@ -24,9 +24,9 @@
   "homepage": "https://github.com/realglobe-Inc/clay-policy#readme",
   "dependencies": {
     "adigest": "^3.0.0",
-    "asobj": "^2.0.2",
+    "asobj": "^2.0.10",
     "clay-constants": "^3.4.4",
-    "clay-entity": "^2.1.3",
+    "clay-entity": "^2.1.4",
     "clay-errors": "^3.0.1",
     "clay-schemas": "^4.1.1",
     "clay-serial": "^2.0.3",
@@ -34,14 +34,13 @@
     "tv4": "^1.3.0"
   },
   "devDependencies": {
-    "ababel": "^2.0.3",
-    "ababel-es2015": "^2.0.2",
+    "ababel": "^4.0.6",
     "aglob": "^3.0.0",
-    "amocha": "^4.0.0",
+    "amocha": "^5.0.0",
     "ape-formatting": "^1.0.2",
     "ape-releasing": "^4.0.4",
     "ape-tasking": "^4.0.9",
-    "ape-tmpl": "^6.0.2",
+    "ape-tmpl": "^6.0.8",
     "ape-updating": "^4.1.1",
     "coz": "^6.0.20",
     "injectmock": "^2.0.0",
@@ -51,7 +50,7 @@
     "writeout": "^2.2.1"
   },
   "engines": {
-    "node": ">=6",
-    "npm": ">=4"
+    "node": ">=8",
+    "npm": ">=5"
   }
 }
