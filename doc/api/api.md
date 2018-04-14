@@ -1,4 +1,4 @@
-# clay-policy@2.1.6
+# clay-policy@2.1.7
 
 Schema helpers for ClayDB resources
 
