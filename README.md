@@ -93,7 +93,7 @@ Usage
 'use strict'
 
 const clayPolicy = require('clay-policy')
-const { STRING, DATE } = clayPolicy.DataTypes
+const {STRING, DATE} = clayPolicy.DataTypes
 
 async function tryPolicy () {
   const policy = clayPolicy({
@@ -106,11 +106,11 @@ async function tryPolicy () {
     },
     rank: {
       type: STRING,
-      oneOf: [ 'GOLD', 'SLIVER', 'BRONZE' ]
+      oneOf: ['GOLD', 'SLIVER', 'BRONZE']
     }
   })
 
-  let error = policy.validate({
+  const error = policy.validate({
     username: 'hoge',
     rank: 'SUPER'
   })
@@ -157,7 +157,7 @@ Field Restrictions
 API Guide
 -----
 
-+ [clay-policy@2.1.7](./doc/api/api.md)
++ [clay-policy@2.1.8](./doc/api/api.md)
   + [create(args)](./doc/api/api.md#clay-policy-function-create)
   + [isPolicy(obj)](./doc/api/api.md#clay-policy-function-is-policy)
   + [ClayPolicy](./doc/api/api.md#clay-policy-class)

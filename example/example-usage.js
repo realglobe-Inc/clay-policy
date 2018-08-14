@@ -1,7 +1,7 @@
 'use strict'
 
 const clayPolicy = require('clay-policy')
-const { STRING, DATE } = clayPolicy.DataTypes
+const {STRING, DATE} = clayPolicy.DataTypes
 
 async function tryPolicy () {
   const policy = clayPolicy({
@@ -14,11 +14,11 @@ async function tryPolicy () {
     },
     rank: {
       type: STRING,
-      oneOf: [ 'GOLD', 'SLIVER', 'BRONZE' ]
+      oneOf: ['GOLD', 'SLIVER', 'BRONZE']
     }
   })
 
-  let error = policy.validate({
+  const error = policy.validate({
     username: 'hoge',
     rank: 'SUPER'
   })
