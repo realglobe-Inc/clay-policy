@@ -157,7 +157,7 @@ Field Restrictions
 API Guide
 -----
 
-+ [clay-policy@2.1.9](./doc/api/api.md)
++ [clay-policy@2.1.10](./doc/api/api.md)
   + [create(args)](./doc/api/api.md#clay-policy-function-create)
   + [isPolicy(obj)](./doc/api/api.md#clay-policy-function-is-policy)
   + [ClayPolicy](./doc/api/api.md#clay-policy-class)
