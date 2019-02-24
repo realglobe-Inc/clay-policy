@@ -7,23 +7,23 @@
 const isPolicy = require('../lib/is_policy.js')
 const ClayPolicy = require('../lib/clay_policy')
 const { ok } = require('assert')
-const co = require('co')
+
 
 describe('is-policy', function () {
   this.timeout(3000)
 
-  before(() => co(function * () {
+  before(async () => {
 
-  }))
+  })
 
-  after(() => co(function * () {
+  after(async () => {
 
-  }))
+  })
 
-  it('Is policy', () => co(function * () {
+  it('Is policy', async () => {
     ok(isPolicy(new ClayPolicy()))
     ok(isPolicy({ $$policy: true }))
-  }))
+  })
 })
 
 /* global describe, before, after, it */

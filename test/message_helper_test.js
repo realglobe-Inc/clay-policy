@@ -6,22 +6,21 @@
 
 const messageHelper = require('../lib/helpers/message_helper.js')
 const assert = require('assert')
-const co = require('co')
 
 describe('message-helper', function () {
   this.timeout(3000)
 
-  before(() => co(function * () {
+  before(async () => {
 
-  }))
+  })
 
-  after(() => co(function * () {
+  after(async () => {
 
-  }))
+  })
 
-  it('Message helper', () => co(function * () {
+  it('Message helper', async () => {
 
-  }))
+  })
 })
 
 /* global describe, before, after, it */

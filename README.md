@@ -52,7 +52,7 @@ Schema helpers for ClayDB resources
 
 <!-- Section from "doc/guides/00.TOC.md.hbs" Start -->
 
-<a name="section-doc-guides-00-t-o-c-md"></a>
+<a name="section-doc-guides-00-toc-md"></a>
 
 Table of Contents
 ----------------
@@ -152,12 +152,12 @@ Field Restrictions
 
 <!-- Section from "doc/guides/11.API Guide.md.hbs" Start -->
 
-<a name="section-doc-guides-11-a-p-i-guide-md"></a>
+<a name="section-doc-guides-11-api-guide-md"></a>
 
 API Guide
 -----
 
-+ [clay-policy@2.1.10](./doc/api/api.md)
++ [clay-policy@2.1.11](./doc/api/api.md)
   + [create(args)](./doc/api/api.md#clay-policy-function-create)
   + [isPolicy(obj)](./doc/api/api.md#clay-policy-function-is-policy)
   + [ClayPolicy](./doc/api/api.md#clay-policy-class)

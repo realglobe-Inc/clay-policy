@@ -6,22 +6,22 @@
 
 const dataTypes = require('../lib/data_types.js')
 const assert = require('assert')
-const co = require('co')
+
 
 describe('data-types', function () {
   this.timeout(3000)
 
-  before(() => co(function * () {
+  before(async () => {
 
-  }))
+  })
 
-  after(() => co(function * () {
+  after(async () => {
 
-  }))
+  })
 
-  it('Data types', () => co(function * () {
+  it('Data types', async () => {
 
-  }))
+  })
 })
 
 /* global describe, before, after, it */

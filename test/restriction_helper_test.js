@@ -6,35 +6,35 @@
 
 const { validateRestrictions, formatRestrictions } = require('../lib/helpers/restriction_helper.js')
 const { deepEqual } = require('assert')
-const co = require('co')
+
 
 describe('restriction-helper', function () {
   this.timeout(3000)
 
-  before(() => co(function * () {
+  before(async () => {
 
-  }))
+  })
 
-  after(() => co(function * () {
+  after(async () => {
 
-  }))
+  })
 
-  it('Validate', () => co(function * () {
+  it('Validate', async () => {
     validateRestrictions({
       foo: {
         type: 'HOGE'
       }
     })
-  }))
+  })
 
-  it('Format', () => co(function * () {
+  it('Format', async () => {
     let formatted = formatRestrictions({
       foo: {
         type: 'STRING'
       }
     })
     deepEqual(formatted, { foo: { type: 'cly:string' } })
-  }))
+  })
 })
 
 /* global describe, before, after, it */

@@ -6,22 +6,22 @@
 
 const validationHelper = require('../lib/helpers/validation_helper.js')
 const assert = require('assert')
-const co = require('co')
+
 
 describe('validation-helper', function () {
   this.timeout(3000)
 
-  before(() => co(function * () {
+  before(async () => {
 
-  }))
+  })
 
-  after(() => co(function * () {
+  after(async () => {
 
-  }))
+  })
 
-  it('Validation helper', () => co(function * () {
+  it('Validation helper', async () => {
 
-  }))
+  })
 })
 
 /* global describe, before, after, it */
